@@ -1,0 +1,25 @@
+package com.ayoub.cabinetdentaire.dtos.dentist;
+
+import com.ayoub.cabinetdentaire.enums.Specialization;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.math.BigDecimal;
+import java.util.UUID;
+
+@Builder
+@Getter
+@Setter
+public class DentistResponse {
+    private UUID id;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phone;
+    private String address;
+    private String licenseNumber;
+    private Specialization specialization;
+    private BigDecimal hourlyRate;
+    private String officeHours;
+}
