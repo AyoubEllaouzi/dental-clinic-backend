@@ -3,7 +3,8 @@ package com.ayoub.cabinetdentaire.services.consultation;
 import com.ayoub.cabinetdentaire.dtos.consultation.ConsultationRequest;
 import com.ayoub.cabinetdentaire.dtos.consultation.ConsultationResponse;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 public interface ConsultationService {
@@ -13,13 +14,13 @@ public interface ConsultationService {
 
     ConsultationResponse getConsultationById(UUID id);
 
-    ConsultationResponse getAllConsultations();
+    List<ConsultationResponse> getAllConsultations();
 
-    ConsultationResponse getConsultationsByPatient(UUID patientId);
+    List<ConsultationResponse> getConsultationsByPatient(UUID patientId);
 
-    ConsultationResponse getConsultationsByDentist(UUID dentistId);
+    List<ConsultationResponse> getConsultationsByDentist(UUID dentistId);
 
-    ConsultationResponse getConsultationsByDate(LocalDate date);
+    List<ConsultationResponse> getConsultationsByDate(LocalDateTime date);
 
     ConsultationResponse updateConsultation(UUID id, ConsultationRequest request);
 
@@ -29,9 +30,9 @@ public interface ConsultationService {
 
     ConsultationResponse removeTreatmentFromConsultation(UUID consultationId, UUID treatmentId);
 
-    ConsultationResponse generateInvoice(UUID consultationId);
+    // ConsultationResponse generateInvoice(UUID consultationId);
 
-    ConsultationResponse getConsultationsWithTreatments();
+    List<ConsultationResponse> getConsultationsWithTreatments();
 
     ConsultationResponse getConsultationWithDetails(UUID id);
 }

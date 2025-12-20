@@ -13,9 +13,9 @@ public interface TreatmentService {
 
     TreatmentResponse getTreatmentById(UUID id);
 
-    TreatmentResponse getAllTreatments();
+    List<TreatmentResponse> getAllTreatments();
 
-    TreatmentResponse getTreatmentsByType(TreatmentType type);
+    List<TreatmentResponse> getTreatmentsByType(TreatmentType type);
 
     List<TreatmentResponse> getTreatmentsByConsultation(UUID consultationId);
 
@@ -23,7 +23,7 @@ public interface TreatmentService {
 
     void deleteTreatment(UUID id);
 
-    TreatmentResponse searchTreatments(String keyword);
+    List<TreatmentResponse> searchTreatments(String keyword);
 
     List<TreatmentResponse> getTreatmentsByPriceRange(BigDecimal minPrice, BigDecimal maxPrice);
 

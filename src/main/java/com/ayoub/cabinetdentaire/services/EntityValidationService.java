@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -69,5 +68,10 @@ public class EntityValidationService {
         }
 
         return treatments;
+    }
+
+    public Consultation validateConsultationIdWithDetails(UUID consultationId) {
+        return consultationRepository.findByIdWithDetails(consultationId)
+                .orElseThrow(() -> new EntityNotFoundException("Consultation not found with id: " + consultationId));
     }
 }

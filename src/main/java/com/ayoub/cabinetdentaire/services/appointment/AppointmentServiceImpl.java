@@ -194,7 +194,6 @@ public class AppointmentServiceImpl implements AppointmentService {
         }
     }
 
-
     // -------------------- Slots --------------------
     @Override
     public List<LocalDateTime> getAvailableSlots(UUID dentistId, LocalDate date) {
@@ -254,5 +253,4 @@ public class AppointmentServiceImpl implements AppointmentService {
                                   LocalDateTime appointmentStart, LocalDateTime appointmentEnd) {
         return slotStart.isBefore(appointmentEnd) && slotEnd.isAfter(appointmentStart);
     }
-
 }
